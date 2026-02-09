@@ -1,0 +1,14 @@
+name: kmeans-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - scikit-learn
+  - pip
+  - pip:
+    - azureml-defaults
+    - joblib
+    - inference-schema
+    - azureml-inference-server-http 
