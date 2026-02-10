@@ -18,6 +18,34 @@
 
 ---
 
+## 📑 Table of Contents
+
+<details open>
+<summary><b>Click to expand/collapse</b></summary>
+
+### Core Documentation
+- [📋 Project Overview](#-project-overview)
+- [🏗️ System Architecture](#️-system-architecture)
+- [🔧 Technology Stack](#-technology-stack)
+
+### Pipeline & Implementation
+- [📊 Data Pipeline Flow](#-data-pipeline-flow)
+- [🚀 Deployment Guide](#-deployment-guide)
+
+### Performance & Operations
+- [📈 Performance Benchmarks](#-performance-benchmarks)
+- [🛡️ Security Best Practices](#️-security-best-practices-implemented)
+
+### Additional Resources
+- [📦 Repository Structure](#-repository-structure)
+- [🎯 Business Impact & Insights](#-business-impact--insights)
+- [🔮 Future Enhancements](#-future-enhancements)
+- [📚 References & Resources](#-references--resources)
+
+</details>
+
+---
+
 ## 📋 Project Overview
 
 ### Business Problem
