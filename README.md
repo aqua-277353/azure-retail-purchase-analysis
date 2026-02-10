@@ -12,8 +12,6 @@
 **Scalable Customer Segmentation Platform** built on Azure Cloud Infrastructure  
 *From Raw Transaction Logs to Actionable Business Intelligence*
 
-[Kiến trúc](#-system-architecture) • [Tech Stack](#-technology-stack) • [Pipeline](#-data-pipeline-flow) • [Deployment](#-deployment-guide) • [Performance](#-performance-benchmarks)
-
 </div>
 
 ---
