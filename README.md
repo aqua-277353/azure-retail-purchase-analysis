@@ -173,7 +173,7 @@ For each CustomerID:
 * **Output**: 
   - 4,335 unique customers with RFM scores
   - 3 normalized datasets 
-  - Runtime: ~5 minuteshdinsight
+  - Runtime: ~5 minutes
 
 <p align="center">
   <img src="images/hdinsight.png" width="800">
@@ -201,9 +201,9 @@ For each CustomerID:
 | 2 | Loyal | Medium R+F+M | 960 | 22.2% |
 | 3 | New | Low R+F+M | 1,155 | 26.7% |
 
-Recency (R): Days since the last transaction.
-Frequency (F): Total number of transactions within the analysis period.
-Monetary (M): Total revenue contributed by the customer.
+* **Recency (R):** Days since the last transaction.
+* **Frequency (F):** Total number of transactions within the analysis period.
+* **Monetary (M):** Total revenue contributed by the customer.
 
 * **Config**:
   - Compute: Standard_DS2_v2 (CPU-optimized)
@@ -223,12 +223,12 @@ Monetary (M): Total revenue contributed by the customer.
 * **Deployment Stack**:
   - Container: Custom Docker (Python 3.9 + scikit-learn 1.2)
   - Orchestration: Azure Container Instance (ACI)
-* **Inference Pipeline**:
-  1.Input Validation: Verify JSON payload structure and enforce data constraints (e.g., `monetary` must be float, `frequency` ≥ 0).
-  2.Feature Transformation: Apply **Log Transformation** (`np.log1p`) to reduce skewness, followed by **MinMax Scaling** to normalize features to [0,1] range.
-  3.Model Prediction: Execute K-Means inference using the pre-loaded model (cached in memory) to assign a `cluster_id`.
-  4.Business Mapping: Translate the numeric `cluster_id` into business-readable labels (e.g., *0 → "Champions"*) and strategic recommendations.
-  5.Response Formatting: Construct the final JSON object containing prediction results, confidence scores, and processing time.
+* **Inference Pipeline**:   
+  1. Input Validation: Verify JSON payload structure and enforce data constraints (e.g., `monetary` must be float, `frequency` ≥ 0).  
+  2. Feature Transformation: Apply **Log Transformation** (`np.log1p`) to reduce skewness, followed by **MinMax Scaling** to normalize features to [0,1] range.   
+  3. Model Prediction: Execute K-Means inference using the pre-loaded model (cached in memory) to assign a `cluster_id`.   
+  4. Business Mapping: Translate the numeric `cluster_id` into business-readable labels (e.g., *0 → "Champions"*) and strategic recommendations.   
+  5. Response Formatting: Construct the final JSON object containing prediction results, confidence scores, and processing time.  
 
 ```
 API Response:
@@ -401,17 +401,6 @@ Champions:        16.8% (731)   → High-value segment
 2. **Onboarding Flow**: Nurture New Customers to 2nd purchase within 30 days
 3. **VIP Program**: Exclusive perks for Champions (16% drive 60% revenue)
 4. **Loyalty Rewards**: Gamification for Loyal → Champions conversion
-
----
-
-## 🔮 Future Enhancements
-
-### Phase 2 Roadmap
-- [ ] **Real-time Streaming**: Replace batch MapReduce with Spark Structured Streaming
-- [ ] **MLOps Automation**: Azure ML Pipelines for CI/CD model deployment
-- [ ] **Advanced Models**: Test XGBoost/LightGBM for churn prediction
-- [ ] **Delta Lake Migration**: ACID transactions + time travel for data lake
-- [ ] **Cost Optimization**: Serverless Synapse Analytics vs. HDInsight TCO analysis
 
 ---
 
